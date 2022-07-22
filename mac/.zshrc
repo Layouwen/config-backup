@@ -7,6 +7,12 @@ plugins=(
 z
 sudo
 rand-quote
+colored-man-pages
+safe-paste
+command-not-found
+per-directory-history
+extract
+cp
 )
 
 quote | cowsay
