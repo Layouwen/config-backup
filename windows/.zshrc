@@ -53,5 +53,4 @@ alias gst="git status -sb"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -- | less"
 
 alias webstorm="/d/JetBrains/Toolbox/apps/WebStorm/ch-0/221.5921.27/bin/webstorm64.exe"
-alias zj="zellij"
 alias lg='lazygit'
