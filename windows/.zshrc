@@ -8,13 +8,12 @@ sudo
 rand-quote
 colored-man-pages
 safe-paste
-command-not-found
-per-directory-history
 extract
 cp
 copyfile
 copypath
 web-search
+command-not-found
 )
 
 quote | cowsay
@@ -24,6 +23,7 @@ source ~/.zplug/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "jeffreytse/zsh-vi-mode"
+zplug "jimhester/per-directory-history"
 
 if ! zplug check --verbose; then
 	    printf "Install? [y/N]: "
@@ -33,6 +33,8 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
+ZSH_WEB_SEARCH_ENGINES=(bl "https://search.bilibili.com/all?keyword=")
 
 source $ZSH/oh-my-zsh.sh
 
@@ -53,4 +55,5 @@ alias gst="git status -sb"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -- | less"
 
 alias webstorm="/d/JetBrains/Toolbox/apps/WebStorm/ch-0/221.5921.27/bin/webstorm64.exe"
+alias zj="zellij"
 alias lg='lazygit'
