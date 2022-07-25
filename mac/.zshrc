@@ -9,10 +9,13 @@ sudo
 rand-quote
 colored-man-pages
 safe-paste
-command-not-found
-per-directory-history
 extract
 cp
+copyfile
+copypath
+web-search
+command-not-found
+macos
 )
 
 quote | cowsay
@@ -23,6 +26,7 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "jeffreytse/zsh-vi-mode"
+zplug "jimhester/per-directory-history"
 
 if ! zplug check --verbose; then
 	    printf "Install? [y/N]: "
@@ -32,6 +36,8 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
+ZSH_WEB_SEARCH_ENGINES=(bl "https://search.bilibili.com/all?keyword=")
 
 source $ZSH/oh-my-zsh.sh
 
