@@ -17,8 +17,6 @@ web-search
 command-not-found
 )
 
-quote | cowsay
-
 source ~/.zplug/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
