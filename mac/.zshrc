@@ -83,7 +83,7 @@ alias rm="trash -F"
 alias zj="zellij"
 alias lg='lazygit'
 
-alias openproxy="export http_proxy=http://127.0.0.1:10887;export https_proxy=http://127.0.0.1:10887;"
+alias openproxy="export http_proxy=http://127.0.0.1:10086;export https_proxy=http://127.0.0.1:10086;"
 alias closeproxy="unset http_proxy; unset https_proxy"
 
 # Fig post block. Keep at the bottom of this file.
