@@ -9,7 +9,7 @@ export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebr
 export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 
 # Home path
-export ME="/Users/youwenliang"
+export ME="/Users/avan"
 
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -30,8 +30,6 @@ web-search
 command-not-found
 macos
 )
-
-quote | cowsay
 
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -110,6 +108,8 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+quote | cowsay
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
