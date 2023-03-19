@@ -7,9 +7,12 @@ export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+# Input your path
+export HOMEBREW_PREFIX_CUSTOM=/usr/local
 
 # Home path
-export ME="/Users/avan"
+# Input your path
+export ME="/Users/4van"
 
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -31,7 +34,7 @@ command-not-found
 macos
 )
 
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
+export ZPLUG_HOME=$HOMEBREW_PREFIX_CUSTOM/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -54,12 +57,12 @@ source $ZSH/oh-my-zsh.sh
 
 # Nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # brew install autojump
-[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+[ -f $HOMEBREW_PREFIX_CUSTOM/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX_CUSTOM/etc/profile.d/autojump.sh
 
 # Custom shell path
 export PATH="$PATH:$ME/Software/shell"
