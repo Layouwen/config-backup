@@ -40,7 +40,6 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-autosuggestions"
 zplug "jeffreytse/zsh-vi-mode"
-zplug "jimhester/per-directory-history"
 
 if ! zplug check --verbose; then
 	    printf "Install? [y/N]: "
