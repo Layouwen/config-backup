@@ -8,11 +8,10 @@ export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebr
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
 export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 # Input your path
-export HOMEBREW_PREFIX_CUSTOM=/usr/local
+export HOMEBREW_PREFIX_CUSTOM=/opt/homebrew
 
 # Home path
-# Input your path
-export ME="/Users/4van"
+export ME="/Users/avan"
 
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -120,7 +119,12 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-quote | cowsay
+neofetch | lolcat
+figlet "Hello, Avan!" | lolcat
+quote | cowsay | lolcat
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+eval $(thefuck --alias)
