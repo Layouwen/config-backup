@@ -12,7 +12,7 @@ export HOMEBREW_PREFIX_CUSTOM=/usr/local
 
 # Home path
 # Input your path
-export ME="/Users/4van"
+export ME="/Users/avan"
 
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
@@ -120,7 +120,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-quote | cowsay
+neofetch | lolcat
+figlet "Hello, Avan!" | lolcat
+quote | cowsay | lolcat
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+eval $(thefuck --alias)
+
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
