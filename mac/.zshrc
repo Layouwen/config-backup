@@ -99,6 +99,10 @@ alias lg='lazygit'
 alias openproxy="export http_proxy=http://127.0.0.1:10086;export https_proxy=http://127.0.0.1:10086;"
 alias closeproxy="unset http_proxy; unset https_proxy"
 
+# Application
+alias aarc="/Applications/Arc.app/Contents/MacOS/Arc --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 &"
+alias achrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 &"
+
 # bun completions
 [ -s "$ME/.bun/_bun" ] && source "$ME/.bun/_bun"
 
