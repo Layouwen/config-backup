@@ -1,0 +1,44 @@
+// Place your key bindings in this file to override the defaults
+[
+  // isWindows
+  {
+    "key": "ctrl+w",
+    "command": "-extension.vim_ctrl+w",
+    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl && isWindows"
+  },
+  {
+    "key": "ctrl+w", 
+    "command": "-editor.action.smartSelect.grow",
+    "when": "editorTextFocus && isWindows"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "workbench.action.quickOpen",
+    "when": "isWindows"
+  },
+  {
+    "key": "shift shift",
+    "command": "-workbench.action.quickOpen",
+    "when": "isWindows"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "workbench.action.showCommands",
+    "when": "isWindows"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "-workbench.action.showCommands",
+    "when": "isWindows"
+  },
+  {
+    "key": "alt+k",
+    "command": "aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible && isWindows"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "-aipopup.action.modal.generate",
+    "when": "editorFocus && !composerBarIsVisible && isWindows"
+  }
+]
