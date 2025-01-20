@@ -1,5 +1,226 @@
 // Place your key bindings in this file to override the defaults
 [
+  /** ------------------------------------------------------------------ 通用配置 **/
+  // 打开命令窗口
+  // {
+  //   "key": "shift shift",
+  //   "command": "workbench.action.showCommands",
+  // },
+  // vim 向下移动
+  {
+    "key": "ctrl+d",
+    "command": "extension.vim_ctrl+d",
+    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+  },
+  /** ------------------------------------------------------------------ win & mac 区别配置 **/
+  // 打开最近文件
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.openRecent",
+    "when": "isMac"
+  },
+  {
+    "key": "alt+r",
+    "command": "workbench.action.openRecent",
+    "when": "isWindows"
+  },
+  // 快速打开文件
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.quickOpen",
+    "when": "isMac",
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "workbench.action.quickOpen",
+    "when": "isWindows",
+  },
+  // 创建文件
+  {
+    "key": "cmd+n",
+    "command": "explorer.newFile",
+    "when": "isMac",
+  },
+  {
+    "key": "alt+n",
+    "command": "explorer.newFile",
+    "when": "isWindows",
+  },
+  // 上下切分窗口
+  {
+    "key": "ctrl+cmd+\\",
+    "command": "workbench.action.splitEditorUp",
+    "when": "isMac"
+  },
+  {
+    "key": "shift+alt+\\",
+    "command": "workbench.action.splitEditorUp",
+    "when": "isWindows"
+  },
+  /** ------------------------------------------------------------------ mac **/
+  // 向上移动窗口
+  {
+    "key": "shift+up",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isMac",
+    "args": {
+      "after": [
+        "<c-w>",
+        "k"
+      ],
+    }
+  },
+  // 向下移动窗口
+  {
+    "key": "shift+down",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isMac",
+    "args": {
+      "after": [
+        "<c-w>",
+        "j"
+      ],
+    }
+  },
+  // 向左移动窗口
+  {
+    "key": "shift+left",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isMac",
+    "args": {
+      "after": [
+        "<c-w>",
+        "h"
+      ],
+    }
+  },
+  // 向右移动窗口
+  {
+    "key": "shift+right",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isMac",
+    "args": {
+      "after": [
+        "<c-w>",
+        "l"
+      ],
+    }
+  },
+  /** ------------------------------------------------------------------ win **/
+  // 同步 mac 打开命令窗口手势
+  {
+    "key": "ctrl+shift+p",
+    "command": "-workbench.action.showCommands"
+  },
+  {
+    "key": "shift+alt+p",
+    "when": "isWindows",
+    "command": "workbench.action.showCommands"
+  },
+  // 关闭编辑区
+  {
+    "key": "alt+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "isWindows",
+  },
+  // 左右切换窗口
+  {
+    "key": "alt+\\",
+    "command": "workbench.action.splitEditor",
+    "when": "isWindows"
+  },
+  // 向上移动窗口
+  {
+    "key": "shift+up",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isWindows",
+    "args": {
+      "after": [
+        "<c-w>",
+        "k"
+      ],
+    }
+  },
+  // 向下移动窗口
+  {
+    "key": "shift+down",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isWindows",
+    "args": {
+      "after": [
+        "<c-w>",
+        "j"
+      ],
+    }
+  },
+  // 向左移动窗口
+  {
+    "key": "shift+left",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isWindows",
+    "args": {
+      "after": [
+        "<c-w>",
+        "h"
+      ],
+    }
+  },
+  // 向右移动窗口
+  {
+    "key": "shift+right",
+    "command": "vim.remap",
+    "when": "vim.mode == 'Normal' && isWindows",
+    "args": {
+      "after": [
+        "<c-w>",
+        "l"
+      ],
+    }
+  },
+  /** ------------------------------------------------------------------ 解决冲突 **/
+  {
+    "key": "ctrl+p",
+    "command": "-workbench.action.quickOpen",
+  },
+  {
+    "key": "shift+cmd+0",
+    "command": "workbench.action.navigateLast"
+  },
+  {
+    "key": "cmd+0",
+    "command": "-workbench.actions.view.problems",
+    "when": "workbench.panel.markers.view.active"
+  },
+  {
+    "key": "cmd+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    "key": "cmd+0",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active && activeViewlet != 'workbench.view.scm'"
+  },
+  {
+    "key": "cmd+9",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active && activeViewlet != 'workbench.view.scm'"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-workbench.action.gotoLine"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "aichat.newchataction"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-aichat.newchataction"
+  },
+  {
+    "key": "cmd+l",
+    "command": "eslint.executeAutofix"
+  },
   // isWindows
   {
     "key": "ctrl+w",
