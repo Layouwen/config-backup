@@ -11,12 +11,17 @@ export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
 export HOMEBREW_PREFIX_CUSTOM=/opt/homebrew
 
 # Home path
+# Input your path
 export ME="/Users/avan"
 
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
+# spaceship 主题需要执行下面的命令
+# > git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+# > ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 plugins=(
 z
@@ -97,6 +102,10 @@ alias lg='lazygit'
 # Proxy
 alias openproxy="export http_proxy=http://127.0.0.1:10086;export https_proxy=http://127.0.0.1:10086;"
 alias closeproxy="unset http_proxy; unset https_proxy"
+
+# Application
+alias aarc="/Applications/Arc.app/Contents/MacOS/Arc --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 &"
+alias achrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 &"
 
 # bun completions
 [ -s "$ME/.bun/_bun" ] && source "$ME/.bun/_bun"

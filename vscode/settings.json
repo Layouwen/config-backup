@@ -1,31 +1,99 @@
 {
-  /* vscode config start */
+  // 禁用 pretter 使用 eslint
+  "prettier.enable": false,
+  // =========================================================================================================
   // 编辑器配置
   "editor.tabSize": 2,
   "editor.fontSize": 16,
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": false
-  },
+  "editor.formatOnSave": false,
+  "editor.lineNumbers": "relative",
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.accessibilitySupport": "off",
   // 防止缩进被覆盖（解决了html默认缩进4）
   "editor.detectIndentation": false,
-  // 始终显示新tab展示文件内容
-  "workbench.editor.enablePreview": false,
-  // 控制台显示在右侧
-  "workbench.sideBar.location": "right",
-  // icon 主题
-  "workbench.iconTheme": "material-icon-theme",
-  // 设置主题以及图标
-  "workbench.colorTheme": "Community Material Theme Darker",
+  // 粘滞滚动
+  "editor.stickyScroll.enabled": true,
+  // 自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.organizeImports": "never"
+  },
+  // =========================================================================================================
+  // eslint配置
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown"
+  ],
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off", "fixable": true },
+    { "rule": "format/*", "severity": "off", "fixable": true },
+    { "rule": "*-indent", "severity": "off", "fixable": true },
+    { "rule": "*-spacing", "severity": "off", "fixable": true },
+    { "rule": "*-spaces", "severity": "off", "fixable": true },
+    { "rule": "*-order", "severity": "off", "fixable": true },
+    { "rule": "*-dangle", "severity": "off", "fixable": true },
+    { "rule": "*-newline", "severity": "off", "fixable": true },
+    { "rule": "*quotes", "severity": "off", "fixable": true },
+    { "rule": "*semi", "severity": "off", "fixable": true }
+  ],
+  // 开启 eslint 支持所有类型
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
+  // =========================================================================================================
+  // 预览文件
+  "workbench.editor.enablePreview": true,
+  "workbench.colorCustomizations": {},
+  "workbench.editorLargeFileConfirmation": 10240,
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.iconTheme": "eq-material-theme-icons-light",
+  // =========================================================================================================
   // git 配置
   "git.enabled": true,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
-  "git.path": "D:\\cmder\\vendor\\git-for-windows\\bin\\git.exe",
+  "git.openRepositoryInParentFolders": "always",
+  // =========================================================================================================
   // 终端配置
   "terminal.external.osxExec": "Warp.app",
-  "terminal.integrated.defaultProfile.windows": "Ubuntu-20.04 (WSL)",
+  "terminal.integrated.defaultProfile.windows": "Zsh",
   "terminal.explorerKind": "external",
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
@@ -43,30 +111,45 @@
     "Git Bash": {
       "source": "Git Bash"
     },
-    "bash": {
-      "path": "D:\\cmder\\vendor\\git-for-windows\\bin\\bash.exe",
+    "Zsh": {
+      "path": "D:\\git\\bin\\bash.exe",
       "icon": "terminal-bash"
     },
     "Ubuntu-20.04 (WSL)": {
       "path": "C:\\Windows\\System32\\wsl.exe",
-      "args": [
-        "-d",
-        "Ubuntu-20.04"
-      ]
+      "args": ["-d", "Ubuntu-20.04"]
     }
   },
+  // fig 自动补全的配置
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1"
+  },
+  // =========================================================================================================
   // 声明不同后轴文件使用什么代码补全
   "files.associations": {
     "*.cjson": "jsonc",
     "*.wxss": "css",
     "*.wxs": "javascript"
   },
+  // 统一换行符
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  // =========================================================================================================
   // 声明哪些文件可以使用 emmet
   "emmet.includeLanguages": {
     "wxml": "html"
   },
+  // =========================================================================================================
   // 开启装饰器语法
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  // =========================================================================================================
   // 设置对应文件的格式化插件
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -90,7 +173,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "Vue.volar"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -110,175 +193,36 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  // =========================================================================================================
   // 定义 TypeScript 中类型断言后添加空格
   "typescript.format.insertSpaceAfterTypeAssertion": true,
-  /* vscode config end */
-  /* vim start */
-  // 配置 vim 使用系统剪贴板
-  "editor.lineNumbers": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  // =========================================================================================================
   "vim.hlsearch": true,
   "vim.searchHighlightColor": "#f8e71c",
   "vim.searchHighlightTextColor": "#333",
   "vim.searchMatchColor": "#f8e71c",
   "vim.searchMatchTextColor": "#333",
+  // 配置 vim 使用系统剪贴板
   "vim.useSystemClipboard": true,
-  /* vim end */
-  /* prettier start */
-  // prettier配置
-  "prettier.semi": false,
-  "prettier.arrowParens": "avoid",
-  "prettier.withNodeModules": true,
-  "prettier.singleQuote": true,
-  "prettier.jsxSingleQuote": false,
-  "prettier.bracketSpacing": true,
-  "prettier.htmlWhitespaceSensitivity": "ignore",
-  "prettier.printWidth": 120,
-  /* prettier end */
-  /* Code Spell Checker start */
-  // 不检查的英文字典
-  "cSpell.userWords": [
-    "autofetch",
-    "classpath",
-    "cmder",
-    "dockercompose",
-    "factorypath",
-    "fileheader",
-    "koro",
-    "leetcode",
-    "minapp",
-    "todohighlight",
-    "vetur",
-    "vitepress",
-    "vsintellicode",
-    "webstorm",
-    "wxml",
-    "wxss"
-  ],
-  /* Code Spell Checker end */
-  /* eslint start */
-  // eslint配置
-  "eslint.format.enable": true,
-  "eslint.alwaysShowStatus": true,
-  "eslint.probe": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "vue",
-    "markdown"
-  ],
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
-  },
-  /* eslint end */
-  /* koroFileHeader start */
-  // 禁止创建文件注释 和 自动添加注释
-  "fileheader.configObj": {
-    "autoAdd": false,
-    "createHeader": false
-  },
-  /* koroFileHeader end */
-  /* minapp start */
-  "minapp-vscode.disableAutoConfig": true,
-  /* minapp end */
-  /* markdown start */
-  "markdown.preview.lineHeight": 2,
-  /* markdown end */
-  /* TODO Highlight start */
-  // todohighlight 高亮显示
-  "todohighlight.isEnable": true,
-  /* TODO Highlight end */
-  /* vetur start */
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "files.exclude": {
-    "**/.classpath": true,
-    "**/.project": true,
-    "**/.settings": true,
-    "**/.factorypath": true
-  },
-  /* vetur end */
-  /* GitLens start */
-  "[ansible]": {
-    "gitlens.codeLens.scopes": [
-      "document"
-    ]
-  },
-  "gitlens.advanced.messages": {
-    "suppressGitMissingWarning": true
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "code-runner.runInTerminal": true,
-  "editor.inlineSuggest.enabled": true,
-"editor.unicodeHighlight.nonBasicASCII": false,
-  /* GitLens end */
-  /* leetcode start */
-  "leetcode.endpoint": "leetcode-cn",
-  "leetcode.workspaceFolder": "~/.leetcode",
-  "leetcode.defaultLanguage": "javascript",
-  "leetcode.hint.commandShortcut": false,
-  "leetcode.hint.configWebviewMarkdown": false,
-  /* leetcode end */
-  /* fig start */
-  // fig 自动补全的配置
-  "editor.accessibilitySupport": "off",
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  /* fig end */
-  // 需要同步或忽略的设置
-  "settingsSync.ignoredSettings": [
-    "leetcode.workspaceFolder",
-    "-git.defaultCloneDirectory",
-    "-git.path"
-  ],
-  // 是否同步键盘
-  "settingsSync.keybindingsPerPlatform": false,
-  // copilot 自动补全
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": false,
-    "plaintext": false,
-    "markdown": true,
-    "typescript": true,
-    "javascript": true
-  },
-  // 统一换行符
-  "files.eol": "\n",
-  // vim设置
   "vim.easymotion": true,
   "vim.leader": "<Space>",
+  "vim.argumentObjectOpeningDelimiters": ["(", "[", "{"],
+  "vim.argumentObjectClosingDelimiters": [")", "]", "}"],
   "vim.normalModeKeyBindingsNonRecursive": [
     // 取消高亮
     {
-      "before": [
-        "<leader>",
-        "n",
-        "s"
-      ],
-      "commands": [
-        ":noh"
-      ]
+      "before": ["<leader>", "n", "s"],
+      "commands": [":noh"]
     },
     // 重命名
     {
-      "before": [
-        "<leader>",
-        "r",
-        "n"
-      ],
-      "commands": [
-        "editor.action.rename"
-      ]
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
     },
     // 折叠代码
     {
-      "before": [
-        "<leader>",
-        "["
-      ],
+      "before": ["<leader>", "["],
       "commands": [
         {
           "command": "editor.fold"
@@ -286,98 +230,131 @@
         {
           "command": "vim.remap",
           "args": {
-            "after": [
-              "$",
-              "%"
-            ]
+            "after": ["$", "%"]
           }
         }
       ]
     },
     // 回到开头
     {
-      "before": [
-        "H"
-      ],
-      "after": [
-        "^"
-      ]
+      "before": ["H"],
+      "after": ["^"]
     },
     // 回到结尾
     {
-      "before": [
-        "L"
-      ],
-      "after": [
-        "g",
-        "_"
-      ]
+      "before": ["L"],
+      "after": ["g", "_"]
     },
     // 格式化
     {
-      "before": [
-        "<Leader>",
-        "f",
-        "d"
-      ],
-      "commands": [
-        "editor.action.formatDocument"
-      ],
+      "before": ["<Leader>", "f", "d"],
+      "commands": ["editor.action.formatDocument"]
     },
     // 合并下一行
     {
-      "before": [
-        "<Leader>",
-        "j",
-      ],
-      "commands": [
-        "editor.action.joinLines"
-      ],
+      "before": ["<Leader>", "j"],
+      "commands": ["editor.action.joinLines"]
     },
     // 向下跳 5 行
     {
-      "before": [
-        "J"
-      ],
-      "after": [
-        "5",
-        "j"
-      ]
+      "before": ["J"],
+      "after": ["5", "j"]
     },
     // 向上跳 5 行
     {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "5",
-        "k"
-      ]
+      "before": ["K"],
+      "after": ["5", "k"]
     }
   ],
   "vim.visualModeKeyBindings": [
     // 向下跳 5 行
     {
-      "before": [
-        "J"
-      ],
-      "after": [
-        "5",
-        "j"
-      ]
+      "before": ["J"],
+      "after": ["5", "j"]
     },
     // 向上跳 5 行
     {
-      "before": [
-        "K"
-      ],
-      "after": [
-        "5",
-        "k"
-      ]
+      "before": ["K"],
+      "after": ["5", "k"]
     }
   ],
-  "bracket-pair-colorizer-2.depreciation-notice": false,
+  // =========================================================================================================
+  // 不检查的英文字典
+  "cSpell.userWords": [
+    "ahooks",
+    "antd",
+    "autofetch",
+    "Avan",
+    "baojingjilu",
+    "classpath",
+    "cmder",
+    "dockercompose",
+    "factorypath",
+    "fileheader",
+    "koro",
+    "leetcode",
+    "locpard",
+    "mediump",
+    "minapp",
+    "npmjs",
+    "Popconfirm",
+    "todohighlight",
+    "Vanyu",
+    "vetur",
+    "vitepress",
+    "vsintellicode",
+    "webstorm",
+    "Wechaty",
+    "wxml",
+    "wxss"
+  ],
+  // =========================================================================================================
+  // 禁止创建文件注释 和 自动添加注释
+  "fileheader.configObj": {
+    "autoAdd": false,
+    "createHeader": false
+  },
+  // =========================================================================================================
+  "minapp-vscode.disableAutoConfig": true,
+  // =========================================================================================================
+  "markdown.preview.lineHeight": 2,
+  // =========================================================================================================
+  // todohighlight 高亮显示
+  "todohighlight.isEnable": true,
+  // =========================================================================================================
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // =========================================================================================================
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "gitlens.graph.minimap.enabled": false,
+  // =========================================================================================================
+  "[ansible]": {
+    "gitlens.codeLens.scopes": ["document"]
+  },
+  // =========================================================================================================
+  "security.workspace.trust.untrustedFiles": "open",
+  // =========================================================================================================
+  "code-runner.runInTerminal": true,
+  // =========================================================================================================
+  "leetcode.endpoint": "leetcode-cn",
+  "leetcode.workspaceFolder": "~/.leetcode",
+  "leetcode.defaultLanguage": "javascript",
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.configWebviewMarkdown": false,
+  // =========================================================================================================
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "yaml": false,
+    "typescript": true,
+    "javascript": true,
+    "rust": true
+  },
+  // =========================================================================================================
   /* oneDarkPro start */
   // 选择不同主题
   // "oneDarkPro.editorTheme": "oneDarkPro",
@@ -401,6 +378,36 @@
   //   "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.linuxidc.com%2Fupload%2F2019_03%2F19030220298109.png&refer=http%3A%2F%2Fwww.linuxidc.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1612864833&t=d2a1c9707ba8fe0e1c96f1b544478ba3"
   // ],
   /* background end */
-  // quick open lazygit
+  // =========================================================================================================
   "quickOpenLazygit.useITerm": true,
+  // =========================================================================================================
+  "reactIntlLinter.intlLanguage": ["cht"],
+  "reactIntlLinter.intlLanguageConfigName": ["zh_TW"],
+  // =========================================================================================================
+  "tabnine.experimentalAutoImports": true,
+  // =========================================================================================================
+  "vite.open": false,
+  "vite.autoStart": false,
+  // =========================================================================================================
+  "remote.extensionKind": {
+    "GitHub.copilot": ["ui"],
+    "github.copilot-chat": ["ui"]
+  },
+  // =========================================================================================================
+  "redhat.telemetry.enabled": true,
+  // =========================================================================================================
+  "prisma.showPrismaDataPlatformNotification": false,
+  // =========================================================================================================
+  "update.mode": "manual",
+  // =========================================================================================================
+  "diffEditor.ignoreTrimWhitespace": false,
+  // =========================================================================================================
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // =========================================================================================================
+  "projectManager.tags": ["Single Campus", "Locnavi", "Personal"],
+  // =========================================================================================================
+  "console-ninja.featureSet": "Community",
+  // =========================================================================================================
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput", "yaml"],
+  "cursor.general.gitGraphIndexing": "enabled"
 }
