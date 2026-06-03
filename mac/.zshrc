@@ -1,17 +1,20 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# Kiro CLI pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
+
+# Q pre block. Keep at the top of this file.
 
 # Homebrew
-export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
-export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
-export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+# export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
+# export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+# export HOMEBREW_PIP_INDEX_URL="https://pypi.tuna.tsinghua.edu.cn/simple"
+# export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+# export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git"
+# export HOMEBREW_INSTALL_FROM_API=1
+
 # Input your path
 export HOMEBREW_PREFIX_CUSTOM=/opt/homebrew
 
 # Home path
-# Input your path
 export ME="/Users/avan"
 
 # ZSH
@@ -100,8 +103,9 @@ alias zj="zellij"
 alias lg='lazygit'
 
 # Proxy
-alias openproxy="export http_proxy=http://127.0.0.1:10086;export https_proxy=http://127.0.0.1:10086;"
-alias closeproxy="unset http_proxy; unset https_proxy"
+
+alias openproxy="export https_proxy=http://127.0.0.1:10086 http_proxy=http://127.0.0.1:10086 all_proxy=socks5://127.0.0.1:10086"
+alias closeproxy="unset http_proxy; unset https_proxy; unset all_proxy"
 
 # Application
 alias aarc="/Applications/Arc.app/Contents/MacOS/Arc --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 &"
@@ -128,12 +132,40 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-neofetch | lolcat
+fastfetch | lolcat
 figlet "Hello, Avan!" | lolcat
 quote | cowsay | lolcat
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+eval $(thefuck --alias)
+
+
+[[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
+
+# coplit active
+export CODESPACES="true" export GITHUB_SERVER_URL="https://github.com" export GITHUB_TOKEN="NTk4Mi5iZWM3ZTY0NWY5YzU1ZTEwMGM5MmFiZTUxOTdlNDgyMg==" export GITHUB_API_URL="http://124.220.157.23:8800"
+
+# Q post block. Keep at the bottom of this file.
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+
+# fnm
+FNM_PATH="/Users/avan/Library/Application Support/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/Users/avan/Library/Application Support/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+eval "$(fnm env --use-on-cd --resolve-engines --shell zsh)"
+
+PATH=~/.console-ninja/.bin:$PATH
+
+
 ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
-eval $(thefuck --alias)
+
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+
+# Kiro CLI post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
