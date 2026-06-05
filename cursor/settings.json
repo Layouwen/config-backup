@@ -128,6 +128,9 @@
     "wxml": "html"
   },
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "[mjs]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "[html]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
