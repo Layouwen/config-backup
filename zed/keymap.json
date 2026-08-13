@@ -1,0 +1,90 @@
+[
+  // ----------------- 全局快捷键 start -----------------
+  {
+    "bindings": {
+      // 打开项目文件
+      "cmd-1": "project_panel::Toggle",
+      // Git
+      "cmd-0": "git_panel::Toggle",
+      // 终端
+      "alt-f12": "terminal_panel::Toggle",
+    },
+  },
+  // ----------------- 全局快捷键 end -----------------
+
+  // ----------------- 打开最近文件 start -----------------
+  {
+    "context": "Editor && mode == full",
+    "unbind": {
+      "cmd-r": [
+        "buffer_search::Deploy",
+        {
+          "replace_enabled": true
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-r": "projects::OpenRecent",
+    },
+  },
+  // ----------------- 打开最近文件 end -----------------
+
+  // ----------------- 文件搜索 start -----------------
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-p": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift-cmd-o": "file_finder::Toggle",
+    },
+  },
+  // ----------------- 文件搜索 end -----------------
+
+  // ----------------- symbol 搜索 start -----------------
+  {
+    "context": "Editor && mode == full",
+    "unbind": {
+      "cmd-shift-o": "outline::Toggle",
+    },
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "alt-cmd-o": "outline::Toggle",
+    },
+  },
+  // ----------------- symbol 搜索 end -----------------
+
+  // ----------------- vim 配置 start -----------------
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space f d": "editor::Format",
+
+      "shift-h": "vim::FirstNonWhitespace",
+      "shift-l": "vim::EndOfLineDownward",
+
+      "shift-j": ["workspace::SendKeystrokes", "5 j"],
+      "shift-k": ["workspace::SendKeystrokes", "5 k"],
+    },
+  },
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "space n s": ["workspace::SendKeystrokes", ": n o h enter"],
+
+      "tab": "pane::ActivateNextItem",
+      "ctrl-tab": "pane::ActivatePreviousItem",
+    },
+  },
+  // ----------------- vim 配置 end -----------------
+
+]
+
