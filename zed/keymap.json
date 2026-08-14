@@ -19,10 +19,10 @@
       "cmd-r": [
         "buffer_search::Deploy",
         {
-          "replace_enabled": true
-        }
-      ]
-    }
+          "replace_enabled": true,
+        },
+      ],
+    },
   },
   {
     "context": "Workspace",
@@ -86,5 +86,46 @@
   },
   // ----------------- vim 配置 end -----------------
 
+  // ----------------- AI 自动补全 start -----------------
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "tab": "editor::AcceptEditPrediction",
+    },
+  },
+  // ----------------- AI 自动补全 end -----------------
+
+  // ----------------- 快捷键冲突 start -----------------
+  // 新建窗口冲突
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-shift-n": "file_finder::Toggle",
+    },
+  },
+
+  // AI 行内提示冲突
+  {
+    "context": "Workspace",
+    "unbind": {
+      "cmd-k": "git_panel::ToggleFocus",
+    },
+  },
+  // ----------------- 快捷键冲突 end -----------------
+
+  // ----------------- AI 行内编辑 start -----------------
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "cmd-k": "assistant::InlineAssist"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "unbind": {
+      "cmd-\\": "assistant::InlineAssist"
+    }
+  }
+  // ----------------- AI 行内编辑 end -----------------
 ]
 
