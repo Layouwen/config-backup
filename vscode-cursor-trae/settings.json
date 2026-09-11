@@ -1,0 +1,671 @@
+{
+  // =========================================================================================================
+  // 编辑器配置
+  "editor.tabSize": 2,
+  "editor.fontSize": 16,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
+  // 防止缩进被覆盖
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": false,
+  "editor.inlineSuggest.showToolbar": "always",
+  "editor.inlineSuggest.enabled": true,
+  "editor.accessibilitySupport": "off",
+  "editor.suggestSelection": "first",
+  "editor.lineNumbers": "relative",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  // 粘滞滚动
+  "editor.stickyScroll.enabled": true,
+  // 保存时自动修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never",
+    "source.fixAll.stylelint": "explicit"
+  },
+  // =========================================================================================================
+  // 工作台配置
+  "workbench.activityBar.orientation": "vertical",
+  "workbench.editor.enablePreview": false,
+  "workbench.sideBar.location": "right",
+  "workbench.editorLargeFileConfirmation": 10240,
+  // Vira 主题颜色定制
+  "workbench.colorCustomizations": {
+    "[Vira*]": {
+      "statusBar.debuggingBackground": "#80CBC433",
+      "statusBar.debuggingForeground": "#80CBC4",
+      "toolbar.activeBackground": "#80CBC426",
+      "button.background": "#80CBC4",
+      "button.hoverBackground": "#80CBC4cc",
+      "extensionButton.separator": "#80CBC433",
+      "extensionButton.background": "#80CBC414",
+      "extensionButton.foreground": "#80CBC4",
+      "extensionButton.hoverBackground": "#80CBC433",
+      "extensionButton.prominentForeground": "#80CBC4",
+      "extensionButton.prominentBackground": "#80CBC414",
+      "extensionButton.prominentHoverBackground": "#80CBC433",
+      "activityBarBadge.background": "#80CBC4",
+      "activityBar.activeBorder": "#80CBC4",
+      "activityBarTop.activeBorder": "#80CBC4",
+      "list.inactiveSelectionIconForeground": "#80CBC4",
+      "list.activeSelectionForeground": "#80CBC4",
+      "list.inactiveSelectionForeground": "#80CBC4",
+      "list.highlightForeground": "#80CBC4",
+      "sash.hoverBorder": "#80CBC480",
+      "list.activeSelectionIconForeground": "#80CBC4",
+      "scrollbarSlider.activeBackground": "#80CBC480",
+      "editorSuggestWidget.highlightForeground": "#80CBC4",
+      "textLink.foreground": "#80CBC4",
+      "progressBar.background": "#80CBC4",
+      "pickerGroup.foreground": "#80CBC4",
+      "tab.activeBorder": "#80CBC4",
+      "tab.activeBorderTop": "#80CBC400",
+      "tab.unfocusedActiveBorder": "#80CBC4",
+      "tab.unfocusedActiveBorderTop": "#80CBC400",
+      "tab.activeModifiedBorder": "#80CBC400",
+      "notificationLink.foreground": "#80CBC4",
+      "editorWidget.resizeBorder": "#80CBC4",
+      "editorWidget.border": "#80CBC4",
+      "settings.modifiedItemIndicator": "#80CBC4",
+      "panelTitle.activeBorder": "#80CBC4",
+      "breadcrumb.activeSelectionForeground": "#80CBC4",
+      "menu.selectionForeground": "#80CBC4",
+      "menubar.selectionForeground": "#80CBC4",
+      "editor.findMatchBorder": "#80CBC4",
+      "selection.background": "#80CBC440",
+      "statusBarItem.remoteBackground": "#80CBC414",
+      "statusBarItem.remoteHoverBackground": "#80CBC4",
+      "statusBarItem.remoteForeground": "#80CBC4",
+      "notebook.inactiveFocusedCellBorder": "#80CBC480",
+      "commandCenter.activeBorder": "#80CBC480",
+      "chat.slashCommandForeground": "#80CBC4",
+      "chat.avatarForeground": "#80CBC4",
+      "activityBarBadge.foreground": "#000000",
+      "button.foreground": "#000000",
+      "statusBarItem.remoteHoverForeground": "#000000"
+    }
+  },
+  // =========================================================================================================
+  // 文件配置
+  // 统一换行符
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  // 声明不同后缀文件使用什么代码补全
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  // =========================================================================================================
+  // 终端配置
+  "terminal.external.osxExec": "Warp.app",
+  "terminal.integrated.defaultProfile.windows": "Zsh",
+  "terminal.explorerKind": "external",
+  // fig 自动补全的配置
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1",
+    "Q_NEW_SESSION": "1",
+    "CW_NEW_SESSION": "1"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Zsh": {
+      "path": "D:\\git\\bin\\bash.exe",
+      "icon": "terminal-bash"
+    },
+    "Ubuntu-20.04 (WSL)": {
+      "path": "C:\\Windows\\System32\\wsl.exe",
+      "args": [
+        "-d",
+        "Ubuntu-20.04"
+      ]
+    }
+  },
+  // =========================================================================================================
+  // Git 配置
+  "git.openRepositoryInParentFolders": "always",
+  "git.enabled": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  // =========================================================================================================
+  // GitLens 配置
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.advanced.messages": {
+    "suppressGitMissingWarning": true
+  },
+  "gitlens.graph.minimap.enabled": false,
+  // =========================================================================================================
+  // ESLint 配置
+  "eslint.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown"
+  ],
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  // Silent the stylistic rules in you IDE, but still auto fix them
+  "eslint.rules.customizations": [
+    {
+      "rule": "style/*",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "format/*",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-indent",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-spacing",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-spaces",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-order",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-dangle",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*-newline",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*quotes",
+      "severity": "off",
+      "fixable": true
+    },
+    {
+      "rule": "*semi",
+      "severity": "off",
+      "fixable": true
+    }
+  ],
+  // 开启 eslint 支持所有类型
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
+  // =========================================================================================================
+  // Prettier 配置（禁用 prettier，使用 eslint）
+  "prettier.enable": false,
+  "prettier.semi": false,
+  "prettier.arrowParens": "avoid",
+  "prettier.withNodeModules": true,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": false,
+  "prettier.bracketSpacing": true,
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "prettier.printWidth": 120,
+  // =========================================================================================================
+  // TypeScript / JavaScript 配置
+  // 开启装饰器语法
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  // 定义 TypeScript 中类型断言后添加空格
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // =========================================================================================================
+  // Vim 配置
+  "vim.hlsearch": true,
+  "vim.searchHighlightColor": "#f8e71c",
+  "vim.searchHighlightTextColor": "#333",
+  "vim.searchMatchColor": "#f8e71c",
+  "vim.searchMatchTextColor": "#333",
+  // 配置 vim 使用系统剪贴板
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.leader": "<Space>",
+  "vim.argumentObjectOpeningDelimiters": [
+    "(",
+    "[",
+    "{"
+  ],
+  "vim.argumentObjectClosingDelimiters": [
+    ")",
+    "]",
+    "}"
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // 取消高亮
+    {
+      "before": [
+        "<leader>",
+        "n",
+        "s"
+      ],
+      "commands": [
+        ":noh"
+      ]
+    },
+    // 重命名
+    {
+      "before": [
+        "<leader>",
+        "r",
+        "n"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    // 折叠代码
+    {
+      "before": [
+        "<leader>",
+        "["
+      ],
+      "commands": [
+        {
+          "command": "editor.fold"
+        },
+        {
+          "command": "vim.remap",
+          "args": {
+            "after": [
+              "$",
+              "%"
+            ]
+          }
+        }
+      ]
+    },
+    // 回到开头
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ]
+    },
+    // 回到结尾
+    {
+      "before": [
+        "L"
+      ],
+      "after": [
+        "g",
+        "_"
+      ]
+    },
+    // 格式化
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "d"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    // 合并下一行
+    {
+      "before": [
+        "<Leader>",
+        "j"
+      ],
+      "commands": [
+        "editor.action.joinLines"
+      ]
+    },
+    // 向下跳 5 行
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    // 向上跳 5 行
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // 向下跳 5 行
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    // 向上跳 5 行
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    }
+  ],
+  // =========================================================================================================
+  // 拼写检查 - 不检查的英文字典
+  "cSpell.userWords": [
+    "ahooks",
+    "antd",
+    "autofetch",
+    "Avan",
+    "baojingjilu",
+    "classpath",
+    "cmder",
+    "dockercompose",
+    "factorypath",
+    "fileheader",
+    "Hexo",
+    "koro",
+    "leetcode",
+    "locpard",
+    "mediump",
+    "minapp",
+    "npmjs",
+    "Popconfirm",
+    "todohighlight",
+    "Vanyu",
+    "vetur",
+    "vitepress",
+    "vsintellicode",
+    "webstorm",
+    "Wechaty",
+    "wxml",
+    "wxss"
+  ],
+  // =========================================================================================================
+  // 各语言默认格式化插件
+  "[mjs]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[ansible]": {
+    "gitlens.codeLens.scopes": [
+      "document"
+    ]
+  },
+  // =========================================================================================================
+  // Emmet 配置 - 声明哪些文件可以使用 emmet
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  // =========================================================================================================
+  // Diff Editor 配置
+  "diffEditor.ignoreTrimWhitespace": false,
+  // =========================================================================================================
+  // HTTP 代理配置
+  "http.proxy": "",
+  "http.noProxy": [
+    "cmd.micosoft.icu"
+  ],
+  // =========================================================================================================
+  // 安全配置
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.promptForLocalFileProtocolHandling": false,
+  // =========================================================================================================
+  // 设置同步配置
+  "settingsSync.ignoredSettings": [
+    "leetcode.workspaceFolder",
+    "-git.defaultCloneDirectory",
+    "-git.path"
+  ],
+  "settingsSync.keybindingsPerPlatform": false,
+  // =========================================================================================================
+  // Cursor 配置
+  "cursor.cpp.disabledLanguages": [
+    "plaintext",
+    "scminput",
+    "yaml"
+  ],
+  "cursor.general.disableHttp2": true,
+  "cursor.general.disableHttp1SSE": false,
+  "cursor.general.gitGraphIndexing": "enabled",
+  // =========================================================================================================
+  // Trae 配置
+  "trae.network.proxy.effectiveMode": "system",
+  "trae.tab.enableCueFlow": false,
+  // =========================================================================================================
+  // GitHub Copilot 配置
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false,
+    "yaml": false,
+    "typescript": true,
+    "javascript": true,
+    "rust": true
+  },
+  // =========================================================================================================
+  // Chat Instructions 文件位置
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true,
+    "/var/folders/hf/1k96vc9n0rb2lmlc91nb64mc0000gn/T/postman-collections-post-response.instructions.md": true,
+    "/var/folders/hf/1k96vc9n0rb2lmlc91nb64mc0000gn/T/postman-collections-pre-request.instructions.md": true,
+    "/var/folders/hf/1k96vc9n0rb2lmlc91nb64mc0000gn/T/postman-folder-post-response.instructions.md": true,
+    "/var/folders/hf/1k96vc9n0rb2lmlc91nb64mc0000gn/T/postman-folder-pre-request.instructions.md": true,
+    "/var/folders/hf/1k96vc9n0rb2lmlc91nb64mc0000gn/T/postman-http-request-post-response.instructions.md": true,
+    "/var/folders/hf/1k96vc9n0rb2lmlc91nb64mc0000gn/T/postman-http-request-pre-request.instructions.md": true,
+    "C:\\Users\\layou\\AppData\\Local\\Temp\\postman-collections-post-response.instructions.md": true,
+    "C:\\Users\\layou\\AppData\\Local\\Temp\\postman-collections-pre-request.instructions.md": true,
+    "C:\\Users\\layou\\AppData\\Local\\Temp\\postman-folder-post-response.instructions.md": true,
+    "C:\\Users\\layou\\AppData\\Local\\Temp\\postman-folder-pre-request.instructions.md": true,
+    "C:\\Users\\layou\\AppData\\Local\\Temp\\postman-http-request-post-response.instructions.md": true,
+    "C:\\Users\\layou\\AppData\\Local\\Temp\\postman-http-request-pre-request.instructions.md": true
+  },
+  // =========================================================================================================
+  // YAML 配置
+  "yaml.schemas": {
+    "file:///Users/avan/.vscode/extensions/continue.continue-1.2.22-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ],
+    "file:///c%3A/Users/layou/.vscode/extensions/continue.continue-1.2.22-win32-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ],
+    "file:///Users/avan/.cursor/extensions/continue.continue-1.2.22-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  // 禁用 CI 工作流文件的 schema 检测
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ],
+  // =========================================================================================================
+  // JSON Schema 下载可信域名
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://biomejs.dev": true
+  },
+  // =========================================================================================================
+  // Docker 配置
+  "docker.extension.enableComposeLanguageServer": false,
+  // =========================================================================================================
+  // Vite 配置
+  "vite.open": false,
+  "vite.autoStart": false,
+  // =========================================================================================================
+  // Prisma 配置
+  "prisma.showPrismaDataPlatformNotification": false,
+  // =========================================================================================================
+  // LeetCode 配置
+  "leetcode.endpoint": "leetcode-cn",
+  "leetcode.workspaceFolder": "~/.leetcode",
+  "leetcode.defaultLanguage": "javascript",
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.configWebviewMarkdown": false,
+  // =========================================================================================================
+  // Project Manager 配置
+  "projectManager.tags": [
+    "Single Campus",
+    "Locnavi",
+    "Personal"
+  ],
+  // =========================================================================================================
+  // Code Runner 配置
+  "code-runner.runInTerminal": true,
+  // =========================================================================================================
+  // Markdown 配置
+  "markdown.preview.lineHeight": 2,
+  // =========================================================================================================
+  // 文件头注释 - 禁止创建文件注释和自动添加注释
+  "fileheader.configObj": {
+    "autoAdd": false,
+    "createHeader": false
+  },
+  // =========================================================================================================
+  // 小程序插件配置
+  "minapp-vscode.disableAutoConfig": true,
+  // =========================================================================================================
+  // TodoHighlight 高亮显示
+  "todohighlight.isEnable": true,
+  // =========================================================================================================
+  // VSIntelliCode 配置
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  // =========================================================================================================
+  // Bracket Pair Colorizer 配置
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  // =========================================================================================================
+  // Lazygit 配置
+  "quickOpenLazygit.useITerm": true,
+  // =========================================================================================================
+  // React Intl Linter 配置
+  "reactIntlLinter.intlLanguage": [
+    "cht"
+  ],
+  "reactIntlLinter.intlLanguageConfigName": [
+    "zh_TW"
+  ],
+  // =========================================================================================================
+  // Tabnine 配置
+  "tabnine.experimentalAutoImports": true,
+  // =========================================================================================================
+  // Console Ninja 配置
+  "console-ninja.featureSet": "Community"
+}
