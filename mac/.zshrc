@@ -14,9 +14,6 @@
 # Input your path
 export HOMEBREW_PREFIX_CUSTOM=/opt/homebrew
 
-# Home path
-export ME="/Users/avan"
-
 # ZSH
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -71,22 +68,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -f $HOMEBREW_PREFIX_CUSTOM/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX_CUSTOM/etc/profile.d/autojump.sh
 
 # Custom shell path
-export PATH="$PATH:$ME/Software/shell"
+export PATH="$PATH:$HOME/Software/shell"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('$ME/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$ME/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$ME/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="$ME/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# Uncomment the initialization for the distribution installed on this machine.
+# Miniforge:
+# [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ] && . "$HOME/miniforge3/etc/profile.d/conda.sh"
+# Miniconda:
+# [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ] && . "$HOME/miniconda3/etc/profile.d/conda.sh"
 
 # Git alias
 alias ga="git add"
@@ -112,7 +100,7 @@ alias aarc="/Applications/Arc.app/Contents/MacOS/Arc --autoplay-policy=no-user-g
 alias achrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --autoplay-policy=no-user-gesture-required > /dev/null 2>&1 &"
 
 # bun completions
-[ -s "$ME/.bun/_bun" ] && source "$ME/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -125,7 +113,7 @@ export PATH=$PATH:/usr/local/go/bin
 source <(ng completion script)
 
 # pnpm
-export PNPM_HOME="$ME/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -141,18 +129,15 @@ eval $(thefuck --alias)
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
-# coplit active
-export CODESPACES="true" export GITHUB_SERVER_URL="https://github.com" export GITHUB_TOKEN="NTk4Mi5iZWM3ZTY0NWY5YzU1ZTEwMGM5MmFiZTUxOTdlNDgyMg==" export GITHUB_API_URL="http://124.220.157.23:8800"
-
 # Q post block. Keep at the bottom of this file.
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 
 # fnm
-FNM_PATH="/Users/avan/Library/Application Support/fnm"
+FNM_PATH="$HOME/Library/Application Support/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/avan/Library/Application Support/fnm:$PATH"
+  export PATH="$HOME/Library/Application Support/fnm:$PATH"
   eval "`fnm env`"
 fi
 
