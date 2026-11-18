@@ -58,12 +58,6 @@ ZSH_WEB_SEARCH_ENGINES=(bl "https://search.bilibili.com/all?keyword=")
 
 source $ZSH/oh-my-zsh.sh
 
-# Nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX_CUSTOM/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # brew install autojump
 [ -f $HOMEBREW_PREFIX_CUSTOM/etc/profile.d/autojump.sh ] && . $HOMEBREW_PREFIX_CUSTOM/etc/profile.d/autojump.sh
 
@@ -130,18 +124,12 @@ eval $(thefuck --alias)
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # Q post block. Keep at the bottom of this file.
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 
 # fnm
-FNM_PATH="$HOME/Library/Application Support/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$HOME/Library/Application Support/fnm:$PATH"
-  eval "`fnm env`"
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --resolve-engines --shell zsh)"
 fi
-
-eval "$(fnm env --use-on-cd --resolve-engines --shell zsh)"
 
 PATH=~/.console-ninja/.bin:$PATH
 
