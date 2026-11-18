@@ -64,6 +64,13 @@ source $ZSH/oh-my-zsh.sh
 # Custom shell path
 export PATH="$PATH:$HOME/Software/shell"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d "$PYENV_ROOT/bin" ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init - zsh)"
+fi
+
 # Uncomment the initialization for the distribution installed on this machine.
 # Miniforge:
 # [ -f "$HOME/miniforge3/etc/profile.d/conda.sh" ] && . "$HOME/miniforge3/etc/profile.d/conda.sh"
@@ -77,12 +84,13 @@ alias gl="git pull"
 alias gp="git push"
 alias gco="git checkout"
 alias gst="git status -sb"
-alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -- | less"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 # Aliases
 alias rm="trash"
 alias zj="zellij"
 alias lg='lazygit'
+command -v imgcat >/dev/null 2>&1 && alias img='imgcat --width 100%'
 
 # Proxy
 
@@ -104,7 +112,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+command -v ng >/dev/null 2>&1 && source <(ng completion script)
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -118,18 +126,13 @@ fastfetch | lolcat
 figlet "Hello, Avan!" | lolcat
 quote | cowsay | lolcat
 
-eval $(thefuck --alias)
+command -v thefuck >/dev/null 2>&1 && eval "$(thefuck --alias)"
 
 
 [[ -f "$HOME/fig-export/dotfiles/dotfile.zsh" ]] && builtin source "$HOME/fig-export/dotfiles/dotfile.zsh"
 
 # Q post block. Keep at the bottom of this file.
 
-
-# fnm
-if command -v fnm >/dev/null 2>&1; then
-  eval "$(fnm env --use-on-cd --resolve-engines --shell zsh)"
-fi
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -139,6 +142,18 @@ ___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_V
 
 export PATH="$HOME/.dotnet/tools:$PATH"
 
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
+case ":$PATH:" in
+  *":$HOME/.local/bin:"*) ;;
+  *) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
+
+# fnm
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --resolve-engines --shell zsh)"
+fi
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 # Kiro CLI post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.post.zsh"
